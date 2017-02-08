@@ -39,6 +39,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     public ItemsAdapter(List<User> users, Context context) {
         this.users = users;
         this.context = context;
+
     }
 
     @Override
