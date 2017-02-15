@@ -12,6 +12,7 @@ import com.android.laszlo.githubusers.adapters.EndlessRecyclerOnScrollListener;
 import com.android.laszlo.githubusers.adapters.ItemsAdapter;
 import com.android.laszlo.githubusers.api.ApiClient;
 import com.android.laszlo.githubusers.api.ApiInterface;
+import com.android.laszlo.githubusers.model.MainUserDataList;
 import com.android.laszlo.githubusers.model.User;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class GitHubUsers extends AppCompatActivity implements EndlessRecyclerOnS
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_github_users);
 
-        users = new ArrayList<>();
+        users = MainUserDataList.getInstance();
         apiService = new ApiClient().getClient().create(ApiInterface.class);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -66,7 +67,7 @@ public class GitHubUsers extends AppCompatActivity implements EndlessRecyclerOnS
             }
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-                Log.e("E======================", t.toString());
+                Log.e("e", t.toString());
             }
         });
 
@@ -77,4 +78,8 @@ public class GitHubUsers extends AppCompatActivity implements EndlessRecyclerOnS
         loadDataSinceId(lastUserId);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

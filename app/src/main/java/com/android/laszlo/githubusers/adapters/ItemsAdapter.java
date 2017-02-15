@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.android.laszlo.githubusers.R;
 import com.android.laszlo.githubusers.activities.RepositoriesActivity;
 import com.android.laszlo.githubusers.model.Repository;
+import com.android.laszlo.githubusers.model.TempUserRepoList;
 import com.android.laszlo.githubusers.model.User;
 import com.bumptech.glide.Glide;
 
@@ -39,7 +40,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     public ItemsAdapter(List<User> users, Context context) {
         this.users = users;
         this.context = context;
-
     }
 
     @Override
@@ -56,31 +56,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Call<List<Repository>> call = apiService.getUserRepos(currentUser.getLogin());
-                call.enqueue(new Callback<List<Repository>>() {
-                    @Override
-                    public void onResponse(Call<List<Repository>> call, Response<List<Repository>> response) {
-                        List<Repository> repos = new ArrayList<>();
-                        if(response.code()==200) {
-
-                            repos.addAll(response.body());
-                        }
-                        Toast.makeText(context,"status: "+response.code()+" repos: " + repos.size(),Toast.LENGTH_LONG).show();
-                        StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < repos.size(); i++){
-                            sb.append(repos.get(i).getName()+"\n");
-                        }
-                        Log.d("all repos \n", sb.toString());
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<Repository>> call, Throwable t) {
-
-                    }
-                });
-
                 Intent intent = new Intent(context, RepositoriesActivity.class);
+                intent.putExtra("login",currentUser.getLogin());
                 context.startActivity(intent);
             }
         });
