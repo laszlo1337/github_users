@@ -1,113 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#424242">
+    android:background="#424242"
+    android:orientation="vertical"
+    android:weightSum="1">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_basic"
+        android:layout_weight="0.1"
+        android:gravity="bottom"
+        android:text="@string/description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
     <TextView
         android:id="@+id/description_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:maxHeight="400dp"
-        android:minHeight="300dp"
-        android:padding="24dp"
-        android:text="this code doesn't do shit. it is uterly useless piece of crap. don't use it. ever."
-        android:textSize="24sp"
-        android:textStyle="italic"
-        android:layout_alignTop="@+id/textView" />
+        android:layout_marginLeft="@dimen/margin_basic"
+        android:layout_marginRight="@dimen/margin_basic"
+        android:layout_weight="0.3"
+        android:text="@string/description_placeholder" />
 
-    <ImageView
-        android:id="@+id/fork"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/description_textview"
-        android:layout_marginLeft="200dp"
-        android:tint="#BDBDBD"
-        app:srcCompat="@drawable/code_fork" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:tint="#BDBDBD"
+                app:srcCompat="@drawable/ic_code_fork" />
+
+            <TextView
+                android:id="@+id/forks_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:tint="#BDBDBD"
+                app:srcCompat="@drawable/ic_eye" />
+
+            <TextView
+                android:id="@+id/watchers_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:tint="#BDBDBD"
+                app:srcCompat="@drawable/ic_error_black_36dp" />
+
+            <TextView
+                android:id="@+id/problems_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/forks_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/description_textview"
-        android:layout_toEndOf="@+id/fork"
-        android:text="3"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/watchers_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/description_textview"
-        android:layout_marginEnd="61dp"
-        android:layout_toEndOf="@+id/eye"
-        android:text="3"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/problems_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/description_textview"
-        android:layout_toEndOf="@+id/problem"
-        android:text="3"
-        android:textSize="24sp" />
-
-    <ImageView
-        android:id="@+id/problem"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/description_textview"
-        android:layout_marginLeft="280dp"
-        android:tint="#BDBDBD"
-        app:srcCompat="@drawable/ic_error_black_36dp" />
-
-    <ImageView
-        android:id="@+id/eye"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/description_textview"
-        android:layout_marginLeft="360dp"
-        android:tint="#BDBDBD"
-        app:srcCompat="@drawable/eye" />
-
-    <TextView
-        android:id="@+id/ssh_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/fork"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="45dp"
-        android:text="ssh:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="italic" />
+        android:layout_marginStart="@dimen/margin_basic"
+        android:layout_weight="0.05"
+        android:gravity="center_vertical"
+        android:text="@string/ssh"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <TextView
         android:id="@+id/ssh_link"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ssh_textview"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
+        android:layout_marginStart="@dimen/margin_basic"
+        android:layout_weight="0.3"
         android:textIsSelectable="true"
-        android:textSize="24sp"
-        android:textStyle="italic" />
+        android:selectAllOnFocus="true"
+        />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="67dp"
-        android:paddingLeft="16dp"
-        android:text="Description:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="normal|italic" />
-
-</RelativeLayout>
+</LinearLayout>

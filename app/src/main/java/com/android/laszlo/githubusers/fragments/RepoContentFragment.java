@@ -25,9 +25,7 @@ public class RepoContentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment, container, false);
         TextView textView = (TextView) view.findViewById(R.id.description_textview);
         String description = getArguments().getString("description");
-        if(description==null){
-            textView.setText("no description");
-        }else{
+        if (description != null) {
             textView.setText(description);
         }
         textView = (TextView) view.findViewById(R.id.ssh_link);

@@ -3,29 +3,19 @@ package com.android.laszlo.githubusers.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.laszlo.githubusers.R;
 import com.android.laszlo.githubusers.activities.RepositoriesActivity;
-import com.android.laszlo.githubusers.model.Repository;
-import com.android.laszlo.githubusers.model.TempUserRepoList;
 import com.android.laszlo.githubusers.model.User;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static com.android.laszlo.githubusers.activities.GitHubUsers.apiService;
 
 /**
  * Created by laszlo on 2017-01-26.
