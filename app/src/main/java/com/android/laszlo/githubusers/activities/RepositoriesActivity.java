@@ -38,6 +38,7 @@ public class RepositoriesActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         currentUser = getIntent().getStringExtra("login");
         getSupportActionBar().setTitle(currentUser);
+        getSupportActionBar().setElevation(0);
         repos = new ArrayList<>();
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
