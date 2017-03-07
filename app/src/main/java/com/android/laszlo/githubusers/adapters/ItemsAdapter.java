@@ -17,6 +17,9 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by laszlo on 2017-01-26.
  */
@@ -32,10 +35,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         this.context = context;
     }
 
+
+
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.single_item_view, parent, false);
-        return new ItemViewHolder(v);
+        return new ItemViewHolder(
+                LayoutInflater.from(context).inflate(R.layout.single_item_view, parent, false)
+        );
     }
 
     @Override
@@ -69,15 +75,14 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     //inner
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imageView;
-        TextView textView;
+        @BindView(R.id.image_view)ImageView imageView;
+        @BindView(R.id.item_text_view)TextView textView;
         View itemView;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
-            this.imageView = (ImageView) itemView.findViewById(R.id.image_view);
-            this.textView = (TextView) itemView.findViewById(R.id.item_text_view);
+            ButterKnife.bind(this,itemView);
         }
 
     }

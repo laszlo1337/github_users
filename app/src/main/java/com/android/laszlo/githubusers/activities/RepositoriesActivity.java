@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.android.laszlo.githubusers.activities.GitHubUsers.apiService;
+import static com.android.laszlo.githubusers.activities.GitHubUsersActivity.apiService;
 
 /**
  * Created by laszlo on 2017-01-29.

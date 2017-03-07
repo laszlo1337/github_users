@@ -8,45 +8,7 @@ import com.android.laszlo.githubusers.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Example:
- * <p>
- * <pre>
- * {@code
- * public FancyActivity extends AppCompatActivity implements EndlessRecyclerOnScrollListener.OnLoadMoreListener {
- *
- *     EndlessRecyclerOnScrollListener endlessRecyclerOnScrollListener;
- *
- *     @Override
- *     protected void onCreate(Bundle savedInstanceState) {
- *         super.onCreate(savedInstanceState);
- *         setContentView(R.layout.activity_home);
- *
- *         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
- *         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
- *         recyclerView.setAdapter(adapter);
- *         endlessRecyclerOnScrollListener = new EndlessRecyclerOnScrollListener(linearLayoutManager, this);
- *         endlessRecyclerOnScrollListener.setVisibleThreshold(10);
- *         recyclerView.addOnScrollListener(endlessRecyclerOnScrollListener);
- *     }
- *
- *     @Override
- *     public void onLoadMore(int currentPage) {
- *          // load more data
- *     }
- *     @Override
- *     protected void onResume() {
- *         super.onResume();
- *         endlessRecyclerOnScrollListener.reset(0, true);
- *     }
- *   }
- * }
- *
- *
- * </pre>
- *
- * @author Sławomir Onyszko
- */
+
 public final class EndlessRecyclerOnScrollListener extends RecyclerView.OnScrollListener {
 
     private int previousTotal = 0;

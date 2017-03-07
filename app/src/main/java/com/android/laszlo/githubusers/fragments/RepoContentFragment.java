@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.android.laszlo.githubusers.R;
 
+import butterknife.BindView;
+
 
 /**
  * Created by laszlo on 2017-02-04.

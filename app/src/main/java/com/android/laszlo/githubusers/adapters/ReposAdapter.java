@@ -23,9 +23,9 @@ public class ReposAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int p) {
-        Repository r = repos.get(p);
-        return RepoContentFragment.newInstance(p, r.getDescription(), r.getForks(), r.getWatchers(), r.getOpenIssuesCount(), r.getSshUrl());
+    public Fragment getItem(int position) {
+        Repository r = repos.get(position);
+        return RepoContentFragment.newInstance(position, r.getDescription(), r.getForks(), r.getWatchers(), r.getOpenIssuesCount(), r.getSshUrl());
     }
 
     @Override
