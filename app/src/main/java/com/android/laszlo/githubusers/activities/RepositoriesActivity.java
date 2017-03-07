@@ -30,13 +30,14 @@ public class RepositoriesActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private String currentUser;
     private ArrayList<Repository> repos;
+    private static final String KEY_USER_LOGIN = "USER_LOGIN";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_tab_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        currentUser = getIntent().getStringExtra("login");
+        currentUser = getIntent().getStringExtra(KEY_USER_LOGIN);
         getSupportActionBar().setTitle(currentUser);
         getSupportActionBar().setElevation(0);
         repos = new ArrayList<>();
